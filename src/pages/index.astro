@@ -1,11 +1,113 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+	<div class="contenedor-principal">
+		
+		<div class="tarjeta-formulario">
+			
+			<h1 class="titulo">Registro de Usuario</h1>
+			
+			<form>
+				<label>
+					<span class="texto-etiqueta">Nombre:</span>
+					<input type="text" name="nombre" placeholder="Ej: Pepito" required />
+				</label>
+
+				<label>
+					<span class="texto-etiqueta">Apellidos:</span>
+					<input type="text" name="apellidos" placeholder="Ej: Pérez" required />
+				</label>
+
+				<label>
+					<span class="texto-etiqueta">Tipo de Documento:</span>
+					<select name="tipo_documento">
+						<option value="CC">C.C. (Cédula de Ciudadanía)</option>
+						<option value="TI">T.I. (Tarjeta de Identidad)</option>
+						<option value="CE">C.E. (Cédula de Extranjería)</option>
+					</select>
+				</label>
+
+				<label>
+					<span class="texto-etiqueta">Número de Documento:</span>
+					<input type="number" name="numero_documento" placeholder="Sin puntos" required />
+				</label>
+
+				<button type="submit">Enviar Registro</button>
+			</form>
+
+		</div>
+	</div>
 </Layout>
+
+<style>
+	/* 1. Centrar todo en la pantalla y poner fondo gris suave */
+	.contenedor-principal {
+		display: flex;
+		justify-content: center; /* Centrado horizontal */
+		align-items: center;     /* Centrado vertical */
+		min-height: 100vh;       /* Que ocupe toda la altura de la pantalla */
+		background-color: #f0f2f5; /* Color de fondo de la página (gris claro) */
+		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Tipo de letra más moderno */
+	}
+
+	/* 2. La caja blanca (Tarjeta) */
+	.tarjeta-formulario {
+		background-color: white;
+		padding: 2rem;           /* Espacio interno para que no se pegue el texto al borde */
+		border-radius: 10px;     /* Bordes redondeados */
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombrita elegante */
+		width: 100%;
+		max-width: 600px;        /* Que no sea más ancha de 400px */
+	}
+
+	/* 3. El Título */
+	.titulo {
+		text-align: center;
+		color: #333;
+		margin-bottom: 1.5rem;
+		font-size: 1.8rem;
+	}
+
+	/* 4. Estilo de cada campo (Nombre, Apellido...) */
+	label {
+		display: block;          /* Que ocupe toda la línea */
+		margin-bottom: 1rem;     /* Espacio hacia abajo */
+	}
+
+	.texto-etiqueta {
+		font-weight: bold;       /* Letra en negrilla */
+		display: block;
+		margin-bottom: 0.5rem;
+		color: #555;
+	}
+
+	/* 5. Las cajitas para escribir (inputs) y la lista desplegable */
+	input, select {
+		width: 100%;             /* Que ocupen todo el ancho disponible */
+		padding: 10px;           /* Relleno para que no se vea apretado */
+		border: 1px solid #ccc;  /* Borde gris suave */
+		border-radius: 5px;      /* Bordes un poco redondeados */
+		box-sizing: border-box;  /* Para que el ancho se respete bien */
+		font-size: 1rem;
+	}
+
+	/* 6. El Botón */
+	button {
+		width: 100%;
+		padding: 12px;
+		background-color: #007bff; /* Azul bonito */
+		color: white;
+		border: none;
+		border-radius: 5px;
+		font-size: 1rem;
+		font-weight: bold;
+		cursor: pointer;          /* Que salga la manito al pasar el mouse */
+		transition: background 0.3s; /* Animación suave al pasar el mouse */
+	}
+
+	button:hover {
+		background-color: #0056b3; /* Azul más oscuro al pasar el mouse */
+	}
+</style>
