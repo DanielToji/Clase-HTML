@@ -1,0 +1,53 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+	<div class="contenedor-centrado">
+		
+		<div class="tarjeta-sombreada">
+			
+			<h1 class="titulo-tarjeta">✨ Tarjeta con Sombra (Box Shadow)</h1>
+			<p>Esta es una tarjeta de ejemplo. Usaremos CSS para darle una apariencia elevada y moderna usando la propiedad 'box-shadow'.</p>
+			
+		</div>
+	</div>
+</Layout>
+
+<style>
+	/* 1. Centrado en la página */
+	.contenedor-centrado {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		min-height: 100vh;
+		background-color: #e6e9f0; /* Fondo azul grisáceo */
+		font-family: Arial, sans-serif;
+	}
+
+	/* 2. Estilo de la Tarjeta */
+	.tarjeta-sombreada {
+		background-color: white;
+		padding: 30px;
+		border-radius: 12px;
+		width: 100%;
+		max-width: 450px;
+		text-align: center;
+		
+		/* LA PROPIEDAD CLAVE: BOX-SHADOW */
+		box-shadow: 
+			0 10px 20px rgba(0, 0, 0, 0.19), 
+			0 6px 6px rgba(0, 0, 0, 0.23); 
+	}
+
+	.titulo-tarjeta {
+		color: #3f51b5; 
+		font-size: 1.5rem;
+		margin-bottom: 10px;
+	}
+	
+	p {
+		color: #555;
+		line-height: 1.5;
+	}
+</style>
